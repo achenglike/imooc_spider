@@ -23,6 +23,9 @@ var Data = {
  					} 
  					nums -= 1;
  					if (nums == 0) {
+ 						dates.sort(function (a, b) {
+ 							return b.createTime - a.createTime;
+ 						});
  						callback(null, dates);
  					}
 				})
