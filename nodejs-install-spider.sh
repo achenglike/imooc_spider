@@ -51,11 +51,17 @@ fi
 if [ $nodeNpmInstalled == 1 ]; then
     echo "The cards are in your hands. Now it is up to you \"Pressure makes diamonds\""
     # Check running nodejs-simple-server app
-    cd /tmp
+    folder="/data/android/spider"
+    # -x 参数判断 $folder 是否存在并且是否具有可执行权限
+    if [ ! -x "$folder"]; then
+      mkdir "$folder"
+    fi
+
+    cd $folder
     git clone https://github.com/achenglike/imooc_spider.git
     cd imooc_spider
     npm install
-    echo "server port is 3000"
+    echo "server port is 3001"
     npm start
 
     # node /tmp/nodejs-simple-server/server.js &
