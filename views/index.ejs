@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <!-- this.version = version;
+	this.comment = comment;
+	this.createTime = createTime;
+	this.phonemodel = phonemodel;
+	this.score = score;
+	this.channel = channel; -->
+
+	<table>
+  		<tr>
+    		<th>版本</th>
+    		<th>评价</th>
+    		<th>评分</th>
+    		<th>应用商店</th>
+    		<th>机型</th>
+    		<th>时间</th>
+  		</tr>
+  		<% for(var i = 0;i < context.length;i++){ %>
+    	<tr>
+    		<td><%= context[i].version %></td>
+    		<td><%= context[i].comment %></td>
+    		<td><%= context[i].score %></td>
+    		<td><%= context[i].channel %></td>
+    		<td><%= context[i].phonemodel %></td>
+    		<td><%= moment(context[i].createTime).format('YYYY-MM-DD') %></td>
+  		</tr>
+	<% } %>
+	</table>
+  </body>
+</html>
