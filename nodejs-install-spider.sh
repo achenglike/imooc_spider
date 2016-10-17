@@ -62,7 +62,7 @@ if [ $nodeNpmInstalled == 1 ]; then
     cd imooc_spider
     npm install
     echo "server port is 3001"
-    npm start
+    nohup npm start &
 
     # node /tmp/nodejs-simple-server/server.js &
     # firefox http://127.0.0.1:8008 &
