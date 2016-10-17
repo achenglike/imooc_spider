@@ -12,4 +12,12 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+/* GET DATA */
+router.get('/comments', function (req, res, next) {
+	DataUtils.getAllDate(function (err, data) {
+
+		res.json({data: data});
+	});
+});
+
 module.exports = router;
